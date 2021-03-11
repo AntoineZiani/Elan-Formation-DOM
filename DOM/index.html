@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Trombino</title>
+</head>
+<body>
+    <div id="wrapper">
+        <form action="" id="form">
+            <input type="text" name="nom">
+            <input type="submit" value="Ajouter">
+        </form>
+        <section id= "personnes">
+            <div id="personne1" class="personne" >
+                <h1>Raoul</h1>
+                <p>fzakjle,cmqcm,zutilfa'z</p>
+            </div>
+            <div id="personne1" class="personne" >
+                <h1>Momo</h1>
+                <p>fzakjle,cmqcm,zqzpotc</p>
+            </div>
+            <div id="personne1" class="personne" >
+                <h1>Zlatan</h1>
+                <p>fzakjle,cmqcm,zujkch</p>
+            </div>
+        </section>
+    </div>
+    <script>
+
+        let form = document.querySelector("#form")
+        form.addEventListener("submit", (e) => {
+            event.preventDefault()
+
+            let input = form.querySelector("input[name='nom']")
+            
+            if(input.value !== ""){
+                let newPersonne = document.createElement("div")
+                newPersonne.classList.add("personne")
+                newPersonne.innerHTML = "<h1>" + input.value + "</h1>"
+                
+                newPersonne.querySelector("h1").addEventListener("click", () => alert("OK c'est cliqué"))
+
+                document.querySelector("#personnes").appendChild(newPersonne)
+            }
+            else alert("Remplis ! stp...")
+            
+        })
+
+        document.querySelector("#link").addEventListener("click", (event) => {
+            event.preventDefault()
+            alert("Il y a " + document.querySelectorAll(".personne").length+" personnes dans la liste")
+        })
+
+        let titles = document.querySelectorAll("h1")
+
+        titles.forEach((title) => {
+            title.addEventListener("click", () => alert("OK c'est cliqué"))
+        })
+
+        //form.addEventListener("submit", (event) =>{
+        //    event.preventDefault()//empeche  de faire une action dite 'normal'
+            //alert("MAIS LAISSE MOI DORMIR A ZEBI")
+        //    let input = form.querySelector("input[name='nom']")
+
+        //    let newPersonne = document.createElement("div")
+            
+        //    document.querySelector("#personnes").appendChild(newPersonne)
+        //})
+
+        //let personnes = document.querySelectorAll(".personne")
+
+        //personnes.forEach((p) =>{
+        //    p.addEventListener("click", (event) => {
+        //        p.classList.toggle("clicked")
+        //    })
+        //})
+
+
+        //personne.forEach((p) =>{
+        //    p.addEventListener("click", function(event){
+        //        console.log(event.target.innerHTML)
+        //        event.target.innerHTML = ""
+        //        event.target.style.color = "blue"
+        //    })
+        //})
+
+        //console.log(personne)
+        //personne.forEach((p) => { 
+        //    let color = p.dataset.color
+        //    p.style.backgroundColor = color
+        //})
+        //console.log(document)
+    
+    </script>
+</body>
+</html>

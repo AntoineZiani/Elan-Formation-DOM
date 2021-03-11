@@ -1,0 +1,23 @@
+*{
+    box-sizing: border-box;
+}
+
+#wrapper{
+    max-width: 900px;
+    margin: auto;
+
+}
+
+#personnes{
+    display: flex; 
+    flex-wrap: wrap;
+}
+
+.personne{
+    margin: 1em;
+    padding: 1em;
+}
+
+.clicked{
+    color: aqua;
+}
